@@ -1,0 +1,29 @@
+office:
+  0: not built
+  1: built, unoccupied
+  2: built, occupied, worker unplaced
+  3: built, occupied, worker placed
+
+rocket:
+  0: cockpit
+  1: nosecone
+  2: booster1
+  3: booster2
+  4: booster3
+  5: fins2
+  6: fins1
+
+game_db:
+  player_one: uuid
+  player_one_last_seen: timestamp
+  player_two: uuid / null
+  player_two_last_seen: timestamp / null
+  state: json
+
+create table games (
+  player_one              varchar(64),
+  player_one_last_seen    date,
+  player_two              varchar(64),
+  player_two_last_seen    date,
+  state                   text
+);
