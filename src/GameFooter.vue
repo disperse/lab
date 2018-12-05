@@ -5,20 +5,23 @@
               :player="players[youAre]">
     </building>
     <calendar :upcoming-cards="upcomingCards"></calendar>
+    <messages :messages="messages"></messages>
   </div>
 </template>
 
 <script>
   import Building from './Building.vue'
   import Calendar from './Calendar.vue'
+  import Messages from './Messages.vue'
 
   export default {
     name: 'game-footer',
     components: {
       Building,
-      Calendar
+      Calendar,
+      Messages
     },
-    props: ['players', 'upcomingCards', 'youAre']
+    props: ['players', 'upcomingCards', 'youAre', 'messages']
   }
 </script>
 

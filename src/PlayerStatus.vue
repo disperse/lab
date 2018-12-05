@@ -11,6 +11,7 @@
         <tr><td>Electronics: </td><td>{{ player.electronics }}</td></tr>
         </tbody>
       </table>
+      <small>{{ ((player.lastSeen === -1) ? 'Waiting for player' : 'Player last seen ' + secondsAgo + ' seconds ago.') }}</small>
     </div>
     <div class="sub-status">
       <rocket :rocket="player.rocket"></rocket>
@@ -33,6 +34,11 @@
     props: ['player', 'youAre'],
     components: {
       Rocket
+    },
+    computed: {
+      secondsAgo: function () {
+        return Math.floor((Date.now() - this.player.lastSeen) / 1000)
+      }
     }
   }
 </script>

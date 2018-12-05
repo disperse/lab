@@ -14,6 +14,7 @@
       v-if="gameStarted"
       :you-are="game.youAre"
       :players="game.players"
+      :messages="game.messages"
       :upcoming-cards="game.upcomingCards">
     </game-footer>
   </div>
@@ -29,7 +30,7 @@
   import backgroundMusic from './assets/background-song.m4a'
   import uuid from 'uuid/v4'
 
-  const POLLING_DELAY = 5000
+  const POLLING_DELAY = 3000
   // const SERVER_URL = 'http://localhost:5000/game/' // dev
   const SERVER_URL = 'https://cryptic-wave-46600.herokuapp.com/game/' // prod
 
